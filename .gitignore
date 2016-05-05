@@ -1,0 +1,5 @@
+node_modules
+.DS_Store
+/javascript/*/node_modules
+/ruby/.DS_Store
+/ruby/*/.DS_Store
