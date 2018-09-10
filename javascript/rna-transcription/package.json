@@ -1,0 +1,15 @@
+{
+  "name": "rna-transcription",
+  "version": "1.0.0",
+  "description": "Write a program that, given a DNA strand, returns its RNA complement (per RNA transcription).",
+  "main": "rna-transcription.js",
+  "dependencies": {
+    "lodash": "^4.11.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
