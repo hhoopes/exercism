@@ -1,9 +1,10 @@
 const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
 
-export default function isPangram(sentence) {
+var isPangram = function(sentence) {
+  let lowercaseSentence = sentence.toLowerCase()
   return alphabet.every(function(char) {
-    this.sentence.includes(char)
+    return lowercaseSentence.includes(char)
   })
 }
 
-// module.exports = isPangram
+module.exports = isPangram
