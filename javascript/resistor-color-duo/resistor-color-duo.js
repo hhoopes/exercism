@@ -1,11 +1,9 @@
-//
-// This is only a SKELETON file for the 'Resistor Color Duo' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
 export const decodedValue = (resistorColors) => {
-  return parseInt("" + COLORS.indexOf(resistorColors[0]) + COLORS.indexOf(resistorColors[1]));
+  return colorCode(resistorColors[0]) * 10 + colorCode(resistorColors[1]);
+};
 
+const colorCode = (color) => {
+  return COLORS.indexOf(color);
 };
 
 const COLORS = [

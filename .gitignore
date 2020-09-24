@@ -3,3 +3,7 @@ node_modules
 /javascript/*/node_modules
 /ruby/.DS_Store
 /ruby/*/.DS_Store
+.exercism
+.vscode
+.npmrc
+.eslintrc
