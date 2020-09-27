@@ -3,6 +3,7 @@
 // convenience to get you started writing code faster.
 //
 
+
 export const colorCode = (color) => {
   return COLORS.indexOf(color);
 };
