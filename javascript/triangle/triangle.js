@@ -1,22 +1,32 @@
-//
-// This is only a SKELETON file for the 'Triangle' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
 export class Triangle {
-  constructor() {
-    throw new Error("Remove this statement and implement this function");
+  constructor(...sides) {
+    this.sides = sides;
+    this.sidesUniqueness = new Set(this.sides).size;
+    this.validTriangle = this.validTriangleIdentity();
   }
 
   isEquilateral() {
-    throw new Error("Remove this statement and implement this function");
+    return this.validTriangle && this.sidesUniqueness === 1;
   }
 
   isIsosceles() {
-    throw new Error("Remove this statement and implement this function");
+    return this.validTriangle && this.sidesUniqueness < 3;
   }
 
   isScalene() {
-    throw new Error("Remove this statement and implement this function");
+    return this.validTriangle && this.sidesUniqueness === 3; 
+  }
+
+  validTriangleIdentity() {
+    return this.nonzeroSides() && this.validSideSums();
+  }
+
+  nonzeroSides() {
+    return this.sides.every(side => side > 0);
+  }
+
+  validSideSums() {
+    let sortedSides = this.sides.sort();
+    return this.sides[2] < this.sides[0] + this.sides[1];
   }
 }
