@@ -1,10 +1,12 @@
+const secondsInYear = 31_557_600;
+
 export const age = (planet, seconds) => {
-  let unroundedYears = convertSecondToYear(seconds) * 1/planetTime[planet];
+  let unroundedYears = convertSecondToYear(seconds)/planetTime[planet];
   return decimalRound(unroundedYears);
 };
 
 function convertSecondToYear (seconds) {
-  return seconds/31_557_600;
+  return seconds/secondsInYear;
 }
 
 function decimalRound(number) {
