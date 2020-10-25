@@ -1,6 +1,7 @@
 node_modules
 .DS_Store
 /javascript/*/node_modules
+package-lock.json
 /ruby/.DS_Store
 /ruby/*/.DS_Store
 .exercism
