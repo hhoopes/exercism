@@ -1,17 +1,21 @@
 class Sieve
   def initialize(limit)
-    @range = (2..limit).to_a
-    @iter = limit/2
     @limit = limit
   end
 
   def primes
-    primes = @range
-    (2..@iter).to_a.each do | multiple |
-      @iter.times do | i |
-        primes.delete(multiple * (2 + i))
+    potential_primes = (2..@limit).to_a
+    iterations = @limit/2
+
+    (2..iterations).to_a.each do | factor |
+      next if !potential_primes.include? factor
+
+      max = @limit/factor + 1
+      (2..max).to_a.each do | i |
+        potential_primes.delete(factor * i)
       end
     end
-    primes
+
+    potential_primes
   end
 end
