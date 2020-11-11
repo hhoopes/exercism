@@ -1,10 +1,10 @@
 export class Matrix {
   constructor(matrixDescriptor) {
-    this.numericRows = 
-      matrixDescriptor.split('\n')
-      .map(row => 
-        row.split(' ')
-        .map(Number)) 
+    this.numericRows = this.getNumericRows(matrixDescriptor)
+  }    
+
+  getNumericRows(matrixDescriptor) {
+    return matrixDescriptor.split('\n').map(row => row.split(' ').map(Number)) 
   }
 
   get rows() {
