@@ -1,26 +1,46 @@
-//
-// This is only a SKELETON file for the 'Clock' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
 export class Clock {
-  constructor() {
-    throw new Error('Remove this statement and implement this function');
+  constructor(hours, minutes = 0) {
+    this.minutes = this.getMinutes(minutes);
+    this.hours = this.getHours(hours, minutes);
+  }
+
+  getMinutes(minutes) {
+    let reducedMinutes = minutes % 60;
+    if(reducedMinutes < 0) {
+      return reducedMinutes + 60;
+    } else {
+      return Math.abs(reducedMinutes);
+    }
+  }
+
+  getHours(hours, minutes) {
+    let totalHours = (hours + (Math.floor(minutes/60))) % 24
+    if(totalHours < 0) {
+      return totalHours + 24;
+    } else {
+      return totalHours;
+    }
   }
 
   toString() {
-    throw new Error('Remove this statement and implement this function');
+    return `${this.hours.toString().padStart(2, '0')}:${this.minutes.toString().padStart(2, '0')}`
   }
 
-  plus() {
-    throw new Error('Remove this statement and implement this function');
+  plus(additionalMinutes) {
+    return this.tally(additionalMinutes, +1)
   }
 
-  minus() {
-    throw new Error('Remove this statement and implement this function');
+  minus(fewerMinutes) {
+    return this.tally(fewerMinutes, -1)
   }
 
-  equals() {
-    throw new Error('Remove this statement and implement this function');
+  tally(minutes, sign) {
+    this.hours = this.getHours(this.hours, this.minutes + minutes * sign);
+    this.minutes = this.getMinutes(this.minutes + minutes * sign);
+    return this
+  }
+
+  equals(comparisonClock) {
+    return this.toString() == comparisonClock.toString();
   }
 }
