@@ -28,9 +28,9 @@ const scoreMap = {
 }
 const scoreReducer = (acc, letter) => acc + scoreMap[letter];
 
-export const score = (string) => {
+export const score = (string, wordMultiplier = 1) => {
   if (string === "") return 0;
 
   let stringArray = string.toLowerCase().split('');
-  return stringArray.reduce(scoreReducer, 0);
+  return stringArray.reduce(scoreReducer, 0) * wordMultiplier;
 };

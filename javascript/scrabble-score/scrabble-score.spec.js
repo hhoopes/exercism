@@ -21,7 +21,7 @@ describe('Scrabble', () => {
     expect(score('zoo')).toEqual(12);
   });
 
-  xtest('medium word', () => {
+  test('medium word', () => {
     expect(score('street')).toEqual(6);
   });
 
