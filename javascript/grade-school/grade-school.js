@@ -5,9 +5,8 @@ export class GradeSchool {
 
   roster() {
     const dbCopy = {};
-    let grade, names;
-    for ( [grade, names] of this.database.entries()) { 
-      dbCopy[grade] = Object.assign([], names);
+    for ( let [grade, names] of this.database) {
+      dbCopy[grade] = [...names]
   } 
     return dbCopy;
   }
@@ -15,18 +14,17 @@ export class GradeSchool {
   add(name, grade) {
     this.removeNameFromDatabase(name);
     let names = this.database.get(grade) || [];
-    names.push(name);
-    this.database.set(grade, names.sort());
+    this.database.set(grade, [...names, name].sort());
   }
 
   removeNameFromDatabase(name) {
-    for ( let [ grade, names] of this.database.entries()) {
+    for ( let [ grade, names] of this.database) {
       this.database.set(grade, names.filter(n => n !== name));
     }
   }
 
   grade(grade) {
     let names = this.database.has(grade) ? this.database.get(grade) : [];
-    return Object.assign([], names);
+    return [...names];
   }
 }
