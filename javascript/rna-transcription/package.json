@@ -4,7 +4,7 @@
   "description": "Write a program that, given a DNA strand, returns its RNA complement (per RNA transcription).",
   "main": "rna-transcription.js",
   "dependencies": {
-    "lodash": "^4.11.2"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {},
   "scripts": {
